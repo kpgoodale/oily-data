@@ -1,0 +1,35 @@
+{
+  "name": "focus21intro",
+  "version": "1.0.0",
+  "description": "Notepad application using express and react. Part of focus21.io job application",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpgoodale/focus21intro.git"
+  },
+  "keywords": [
+    "notepad",
+    "expressjs",
+    "react",
+    "focus21"
+  ],
+  "author": "kpgoodale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpgoodale/focus21intro/issues"
+  },
+  "homepage": "https://github.com/kpgoodale/focus21intro#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
