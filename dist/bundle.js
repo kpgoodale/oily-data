@@ -98,8 +98,8 @@ function component() {
     });
     var pairs = odds.map(function (v) {
         return {
-            even: v,
-            odd: v + 1
+            odd: v,
+            even: v + 1
         };
     });
     var nums = evens.map(function (v, i) {

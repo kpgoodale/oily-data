@@ -10,8 +10,8 @@ function component() {
     
     let evens = odds.map(v => v + 1);
     let pairs = odds.map(v => ({
-        even: v,
-        odd: v + 1
+        odd: v,
+        even: v + 1
     }));
     let nums = evens.map((v, i) => v + i);
 
