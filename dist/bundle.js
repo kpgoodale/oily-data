@@ -954,6 +954,12 @@ module.exports = focusNode;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _lodash = __webpack_require__(16);
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -968,42 +974,110 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(
-    'h1',
-    null,
-    'Hello, world!'
-), document.getElementById('root'));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// OLD STUFF BELOW HERE
-function component() {
-    var element = document.createElement('div');
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    // Lodash, imported in this script
-    element.innerHTML = _lodash2.default.join(['Hello', 'webpack'], ' ');
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-    var odds = new Array(1, 3, 5);
+var data = [{
+  oilAmount: 465950,
+  coalAmount: 63600,
+  senatorName: "Ames Inhofe",
+  state: "Oklahoma"
+}, {
+  oilAmount: 458466,
+  coalAmount: 127356,
+  senatorName: "John Barrasso",
+  state: "Wyoming"
+}, {
+  oilAmount: 1180384,
+  coalAmount: 361700,
+  senatorName: "Mitch McConnel",
+  state: "Kentucky"
+}, {
+  oilAmount: 1101456,
+  coalAmount: 33050,
+  senatorName: "John Cornyn",
+  state: "Texas"
+}, {
+  oilAmount: 353864,
+  coalAmount: 96000,
+  senatorName: "Roy Blunt",
+  state: "Missouri"
+}];
 
-    var evens = odds.map(function (v) {
-        return v + 1;
-    });
-    var pairs = odds.map(function (v) {
-        return {
-            odd: v,
-            even: v + 1
-        };
-    });
-    var nums = evens.map(function (v, i) {
-        return v + i;
-    });
+var DataTable = function (_React$Component) {
+  _inherits(DataTable, _React$Component);
 
-    console.log('Array odds:', JSON.stringify(odds));
-    console.log('Array pairs:', JSON.stringify(pairs));
-    console.log('Array nums:', JSON.stringify(nums));
+  function DataTable() {
+    _classCallCheck(this, DataTable);
 
-    return element;
-}
+    return _possibleConstructorReturn(this, (DataTable.__proto__ || Object.getPrototypeOf(DataTable)).apply(this, arguments));
+  }
 
-//document.body.appendChild(component());
+  _createClass(DataTable, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'table',
+        null,
+        _react2.default.createElement(
+          'thead',
+          null,
+          _react2.default.createElement(
+            'tr',
+            null,
+            Object.keys(this.props.data[0]).map(function (item) {
+              return _react2.default.createElement(
+                'th',
+                { key: item },
+                item
+              );
+            })
+          )
+        ),
+        _react2.default.createElement(
+          'tbody',
+          null,
+          this.props.data.map(function (item) {
+            return _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                { key: item.oilAmount },
+                item.oilAmount
+              ),
+              _react2.default.createElement(
+                'td',
+                { key: item.coalAmount },
+                item.coalAmount
+              ),
+              _react2.default.createElement(
+                'td',
+                { key: item.senatorName },
+                item.senatorName
+              ),
+              _react2.default.createElement(
+                'td',
+                { key: item.state },
+                item.state
+              )
+            );
+          })
+        )
+      );
+    }
+  }]);
+
+  return DataTable;
+}(_react2.default.Component);
+
+exports.default = DataTable;
+
+
+_reactDom2.default.render(_react2.default.createElement(DataTable, { data: data }), document.getElementById('root'));
 
 /***/ }),
 /* 16 */
